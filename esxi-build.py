@@ -41,14 +41,13 @@ TIMESTAMP = '{:%Y%m%d%H%M.%S}'.format(datetime.datetime.now())
 TOUCH = 'touch -t ' + TIMESTAMP
 GTARUNLOCKER = '/usr/local/bin/gtar czvf unlocker.tgz etc'
 GTARDISTRIB = '/usr/local/bin/gtar czvf ' + FILENAME + \
-              ' unlocker.tgz esxi-install.sh esxi-uninstall.sh esxi-smctest.sh readme.txt'
+              ' unlocker.tgz esxi-install.sh esxi-uninstall.sh esxi-smctest.sh'
 
 
 def main():
 
     # Timestamp files for release
     print('\nTimestamping files...')
-    subprocess.call(TOUCH + ' readme.txt', shell=True)
     subprocess.call(TOUCH + ' esxi-install.sh', shell=True)
     subprocess.call(TOUCH + ' esxi-uninstall.sh', shell=True)
     subprocess.call(TOUCH + ' esxi-smctest.sh', shell=True)
